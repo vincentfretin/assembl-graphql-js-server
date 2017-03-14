@@ -82,7 +82,7 @@ type Thematic implements IdeaInterface {
   numPosts: Int  # sum of posts of all questions
   posts: [Post]  # not used
   ideas: [IdeaTypes]  # this is the questions
-  localizedTitle(lang: String): String  # title field from idea table is not a langstring, this is why we add localizedTitle field in thematic table which is a langstring
+  title(lang: String): String  # title field from idea table is not a langstring, this is why we add title field in thematic table which is a langstring
   video: Video
 }
 
@@ -93,7 +93,7 @@ type Question implements IdeaInterface {
   numPosts: Int
   posts: [Post]
   ideas: [IdeaTypes] # not used
-  localizedTitle(lang: String): String
+  title(lang: String): String
 }
 
 union IdeaTypes = Idea | Thematic | Question
