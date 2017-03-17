@@ -8,15 +8,17 @@ const authors = [
 ];
 
 const ideas = [
-    {"id": "idea:456"},
-    {"id": "thematic:1", "title": "Comprendre les dynamiques et les enjeux", "numPosts": 29},
-    {"id": "thematic:2", "title": "Envisager de nouvelles opportunités",
+    {"id": "thematic:1", "identifier": "survey", "title": "Comprendre les dynamiques et les enjeux", "numPosts": 29, "numContributors": 32, "imgUrl": "/data/Discussion/6/documents/422/data", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu scelerisque magna. Ut sapien enim, vestibulum in ante quis, vehicula facilisis libero."},
+    {"id": "thematic:2", "identifier": "survey", "title": "Envisager de nouvelles opportunités",
      "video": {
        "title": "Laurent Alexandre, chirurgien et expert en intelligence artificielle nous livre ses prédictions pour le 21e siècle.",
        "description": "Personne ne veut d'un monde où on pourrait manipuler nos cerveaux et où les états pourraient les bidouiller",
        "htmlCode": "<object>....</object>"
      },
      "numPosts": 34,
+     "numContributors": 12,
+     "imgUrl": "/data/Discussion/6/documents/423/data",
+     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu scelerisque magna. Ut sapien enim, vestibulum in ante quis, vehicula facilisis libero.",
      "ideas": [
        {"id": "question:3",
         "title": "Comment qualifiez-vous l'emergence de l'Intelligence Artificielle dans notre société ?",
@@ -39,8 +41,8 @@ const ideas = [
        {"id": "question:5", "subject": "Selon vous, quelles politiques devons-nous mener vis à vis de l'Intelligence Artificielle ?"}
      ]
     },
-    {"id": "thematic:6", "title": "Analyser les défis politique", "numPosts": 29},
-    {"id": "thematic:7", "title": "Inventer un cadre stratégique mondial", "numPosts": 29},
+    {"id": "thematic:6", "identifier": "survey", "title": "Analyser les défis politique", "numPosts": 29, "numContributors": 32, "imgUrl": "/data/Discussion/6/documents/424/data", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu scelerisque magna. Ut sapien enim, vestibulum in ante quis, vehicula facilisis libero."},
+    {"id": "thematic:7", "identifier": "survey", "title": "Inventer un cadre stratégique mondial", "numPosts": 29, "numContributors": 32, "imgUrl": "/data/Discussion/6/documents/425/data", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu scelerisque magna. Ut sapien enim, vestibulum in ante quis, vehicula facilisis libero."}
 ];
 
 const resolveFunctions = {

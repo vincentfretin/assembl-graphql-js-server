@@ -77,9 +77,12 @@ type Idea implements IdeaInterface {
 
 type Thematic implements IdeaInterface {
   id: ID!
+  identifier(identifier: String): String
   description: String
+  imgUrl: String
   title(lang: String): String
   numPosts: Int  # sum of posts of all questions
+  numContributors: Int  # sum of contributors of all questions
   posts: [Post]  # not used
   ideas: [IdeaTypes]  # this is the questions
   title(lang: String): String  # title field from idea table is not a langstring, this is why we add title field in thematic table which is a langstring
