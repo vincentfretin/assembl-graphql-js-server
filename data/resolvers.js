@@ -17,7 +17,7 @@ const ideas = [
      },
      "numPosts": 34,
      "numContributors": 12,
-     "imgUrl": "/data/Discussion/6/documents/423/data",
+     "imgUrl": "/data/Discussion/6/documents/425/data",
      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu scelerisque magna. Ut sapien enim, vestibulum in ante quis, vehicula facilisis libero.",
      "ideas": [
        {"id": "question:3",
@@ -37,18 +37,25 @@ const ideas = [
           }
         ]
        },
-       {"id": "question:4", "subject": "Selon vous, quelles opportunités l'Intelligence Artificielle pourrait représenter ?"},
-       {"id": "question:5", "subject": "Selon vous, quelles politiques devons-nous mener vis à vis de l'Intelligence Artificielle ?"}
+       {"id": "question:4", "title": "Selon vous, quelles opportunités l'Intelligence Artificielle pourrait représenter ?"},
+       {"id": "question:5", "title": "Selon vous, quelles politiques devons-nous mener vis à vis de l'Intelligence Artificielle ?"}
      ]
     },
     {"id": "thematic:6", "identifier": "survey", "title": "Analyser les défis politique", "numPosts": 29, "numContributors": 32, "imgUrl": "/data/Discussion/6/documents/424/data", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu scelerisque magna. Ut sapien enim, vestibulum in ante quis, vehicula facilisis libero."},
-    {"id": "thematic:7", "identifier": "survey", "title": "Inventer un cadre stratégique mondial", "numPosts": 29, "numContributors": 32, "imgUrl": "/data/Discussion/6/documents/425/data", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu scelerisque magna. Ut sapien enim, vestibulum in ante quis, vehicula facilisis libero."}
+    {"id": "thematic:7", "identifier": "survey", "title": "Inventer un cadre stratégique mondial", "numPosts": 29, "numContributors": 32, "imgUrl": "/data/Discussion/6/documents/423/data", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu scelerisque magna. Ut sapien enim, vestibulum in ante quis, vehicula facilisis libero."},
+    {"id": "thematic:67", "identifier": "thread", "title": "Inventer un cadre stratégique mondial", "numPosts": 29, "numContributors": 32, "imgUrl": "https://framapic.org/ibX9g8rDKkId/fHbo8OgaSvuW.jpg", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu scelerisque magna. Ut sapien enim, vestibulum in ante quis, vehicula facilisis libero."},
+    {"id": "thematic:68", "identifier": "thread", "title": "Inventer un cadre stratégique mondial", "numPosts": 29, "numContributors": 32, "imgUrl": "https://framapic.org/3FcT7TlNGrCT/popxXrnh6ELR.jpg", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu scelerisque magna. Ut sapien enim, vestibulum in ante quis, vehicula facilisis libero."},
+    {"id": "thematic:69", "identifier": "thread", "title": "Inventer un cadre stratégique mondial", "numPosts": 29, "numContributors": 32, "imgUrl": "https://framapic.org/ibX9g8rDKkId/fHbo8OgaSvuW.jpg", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu scelerisque magna. Ut sapien enim, vestibulum in ante quis, vehicula facilisis libero."},
+    {"id": "thematic:70", "identifier": "thread", "title": "Inventer un cadre stratégique mondial", "numPosts": 29, "numContributors": 32, "imgUrl": "https://framapic.org/3FcT7TlNGrCT/popxXrnh6ELR.jpg", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu scelerisque magna. Ut sapien enim, vestibulum in ante quis, vehicula facilisis libero."}
 ];
 
 const resolveFunctions = {
   Query: {
     ideas(_, { identifier }) {
       return ideas.filter(idea => idea.identifier === identifier);
+    },
+    idea(_, { id }) {
+      return find(ideas, { id: id });
     },
     // author(_, { id }) {
     //   return find(authors, { id: id });

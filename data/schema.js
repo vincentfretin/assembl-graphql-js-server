@@ -71,6 +71,7 @@ type Idea implements IdeaInterface {
   description: String
   title(lang: String): String
   numPosts: Int
+  imgUrl: String
   posts: [Post]
   ideas: [IdeaTypes]
 }
@@ -105,6 +106,7 @@ union IdeaTypes = Idea | Thematic | Question
 type Query {
   posts(discussionId: ID, ideaId: ID, offset: Int, first: Int, after: String): [Post]
   ideas(identifier: String!, discussionId: ID, ideaType: IdeaType, offset: Int, first: Int, after: String): [IdeaTypes]
+  idea(id: ID!): Thematic
 }
 
 # Type of sentiment
