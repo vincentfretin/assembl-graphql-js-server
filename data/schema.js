@@ -103,8 +103,8 @@ union IdeaTypes = Idea | Thematic | Question
 
 # the schema allows the following query:
 type Query {
-  posts(discussionId: ID, ideaId: ID, offset: Int, limit: Int): [Post]
-  ideas(discussionId: ID, ideaType: IdeaType, offset: Int, limit: Int): [IdeaTypes]
+  posts(discussionId: ID, ideaId: ID, offset: Int, first: Int, after: String): [Post]
+  ideas(identifier: String!, discussionId: ID, ideaType: IdeaType, offset: Int, first: Int, after: String): [IdeaTypes]
 }
 
 # Type of sentiment

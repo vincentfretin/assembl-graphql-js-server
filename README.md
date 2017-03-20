@@ -22,8 +22,8 @@ yarn
 npm start
 ```
 
-The server will run on port 8080. You can change this by editing `server.js`.
+The server will run on port 3000. You can change this by editing `server.js`.
 
 Example of query:
 
-    curl --silent -XPOST -H "Content-Type:application/json" -d '{ "variables": {"lang": "fr"}, "query": "query MyQuery($lang:String!) { ideas { ... on Thematic { id, title(lang: $lang), description, video { title(lang: $lang), description(lang: $lang), htmlCode }, numPosts, questions: ideas { ... on Idea { id, title, propositions: posts { ... on Proposition { id, creator { id, name }, body, sentimentCounts { like, disagree } } } } } } } }" }' http://localhost:8080/graphql  | python -m json.tool
+    curl --silent -XPOST -H "Content-Type:application/json" -d '{ "variables": {"lang": "fr", "identifier": "survey"}, "query": "query MyQuery($lang:String!, $identifier:String!) { ideas(identifier:$identifier) { ... on Thematic { id, title(lang: $lang), description, video { title(lang: $lang), description(lang: $lang), htmlCode }, numPosts, questions: ideas { ... on Idea { id, title, propositions: posts { ... on Proposition { id, creator { id, name }, body, sentimentCounts { like, disagree } } } } } } } }" }' http://localhost:3000/graphql |python -m json.tool

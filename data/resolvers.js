@@ -47,8 +47,8 @@ const ideas = [
 
 const resolveFunctions = {
   Query: {
-    ideas() {
-      return ideas;
+    ideas(_, { identifier }) {
+      return ideas.filter(idea => idea.identifier === identifier);
     },
     // author(_, { id }) {
     //   return find(authors, { id: id });
