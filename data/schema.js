@@ -24,8 +24,20 @@ input LangStringEntryInput {
   localeCode: String!
 }
 
+# Type of sentiment
+enum SentimentType {
+  LIKE
+  DISAGREE
+  DONT_UNDERSTAND
+  MORE_INFO
+}
+
 type Mutations {
   createThematic(video: VideoInput, identifier: String!, descriptionEntries: [LangStringEntryInput], questions: [QuestionInput], titleEntries: [LangStringEntryInput]!): CreateThematic
+  addSentiment(
+    postId: ID!
+    type: SentimentType!
+  ): SentimentCounts!
 }
 
 interface Node {

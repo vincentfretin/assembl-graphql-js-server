@@ -7,6 +7,14 @@ const authors = [
   { id: 139, name: 'Willie Shaw' },
 ];
 
+const posts = [
+  {"id": "proposition:1", "creatorId": 542,
+   "body": "Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
+   "sentimentCounts": {"like": 45, "disagree": 123},
+  },
+];
+
+
 const ideas = [
     {"id": "thematic:1", "identifier": "survey", "title": "Comprendre les dynamiques et les enjeux", "numPosts": 29, "numContributors": 32, "imgUrl": "/data/Discussion/6/documents/422/data", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu scelerisque magna. Ut sapien enim, vestibulum in ante quis, vehicula facilisis libero."},
     {"id": "thematic:2", "identifier": "survey", "title": "Envisager de nouvelles opportunités",
@@ -61,17 +69,25 @@ const resolveFunctions = {
     //   return find(authors, { id: id });
     // },
   },
-  // Mutation: {
-  //   upvotePost(_, { postId }) {
-  //     const post = find(posts, { id: postId });
-  //     if (!post) {
-  //       throw new Error(`Couldn't find post with id ${postId}`);
-  //     }
-  //     post.votes += 1;
-  //     pubsub.publish('postUpvoted', post);
-  //     return post;
-  //   },
-  // },
+  Mutations: {
+    addSentiment(_, { postId, type }) {
+      const post = find(posts, { id: postId });
+      if (!post) {
+        throw new Error(`Couldn't find post with id ${postId}`);
+      }
+      switch (type) {
+        case 'LIKE':
+          post.sentimentCounts.like += 1;
+          break;
+        case 'DISAGREE':
+          post.sentimentCounts.disagree += 1;
+          break;
+        default:
+      }
+      // pubsub.publish('postUpvoted', post);
+      return post.sentimentCounts;
+    },
+  },
   // Subscription: {
   //   postUpvoted(post) {
   //     return post;

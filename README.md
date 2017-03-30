@@ -27,3 +27,11 @@ The server will run on port 3000. You can change this by editing `server.js`.
 Example of query:
 
     curl --silent -XPOST -H "Content-Type:application/json" -d '{ "variables": {"lang": "fr", "identifier": "survey"}, "query": "query MyQuery($lang:String!, $identifier:String!) { ideas(identifier:$identifier) { ... on Thematic { id, title(lang: $lang), description, video { title(lang: $lang), description(lang: $lang), htmlCode }, numPosts, questions: ideas { ... on Idea { id, title, propositions: posts { ... on Proposition { id, creator { id, name }, body, sentimentCounts { like, disagree } } } } } } } }" }' http://localhost:3000/graphql |python -m json.tool
+
+Example of mutation:
+
+    mutation {
+      addSentiment(postId:"proposition:1", type: DISAGREE) {
+      	like, disagree
+    	}
+    }
