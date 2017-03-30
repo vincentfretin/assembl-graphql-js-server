@@ -9,6 +9,7 @@ const authors = [
 
 const posts = [
   {"id": "proposition:1", "creatorId": 542,
+  "ideaId": "question:3",
    "body": "Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
    "sentimentCounts": {"like": 45, "disagree": 123},
   },
@@ -87,6 +88,9 @@ const resolveFunctions = {
       // pubsub.publish('postUpvoted', post);
       return post.sentimentCounts;
     },
+    createPost(_, { ideaId }) {
+      
+    }
   },
   // Subscription: {
   //   postUpvoted(post) {

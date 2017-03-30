@@ -38,6 +38,12 @@ type Mutations {
     postId: ID!
     type: SentimentType!
   ): SentimentCounts!
+  createPost(
+    ideaId: ID
+    parentId: ID,
+    subject: String,
+    body: String!
+  ): Post
 }
 
 interface Node {
