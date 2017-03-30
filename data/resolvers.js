@@ -19,7 +19,7 @@ const ideas = [
      "numContributors": 12,
      "imgUrl": "/data/Discussion/6/documents/425/data",
      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu scelerisque magna. Ut sapien enim, vestibulum in ante quis, vehicula facilisis libero.",
-     "ideas": [
+     "questions": [
        {"id": "question:3",
         "title": "Comment qualifiez-vous l'emergence de l'Intelligence Artificielle dans notre société ?",
         "posts": [
@@ -51,24 +51,15 @@ const ideas = [
 
 const resolveFunctions = {
   Query: {
-    ideas(_, { identifier }) {
+    thematics(_, { identifier }) {
       return ideas.filter(idea => idea.identifier === identifier);
     },
-    idea(_, { id }) {
+    node(_, { id }) {
       return find(ideas, { id: id });
     },
     // author(_, { id }) {
     //   return find(authors, { id: id });
     // },
-  },
-  IdeaTypes: {
-    __resolveType(data, context, info) {
-      if (data.id.split(':')[0] === 'thematic') {
-        return info.schema.getType('Thematic');
-      }
-
-      return info.schema.getType('Idea');
-    },
   },
   // Mutation: {
   //   upvotePost(_, { postId }) {
@@ -96,12 +87,23 @@ const resolveFunctions = {
       return find(authors, { id: post.creatorId });
     },
   },
-  Post: {
+  PostUnion: {
     __resolveType(data, context, info) {
       if (data.id.split(':')[0] === 'proposition') {
-        return info.schema.getType('Proposition');
+        return info.schema.getType('PropositionPost');
       }
 
+      return info.schema.getType('AssemblPost');
+    },
+  },
+  Node: {
+    __resolveType(data, context, info) {
+      if (data.id.split(':')[0] === 'proposition') {
+        return info.schema.getType('PropositionPost');
+      }
+      if (data.id.split(':')[0] === 'thematic') {
+        return info.schema.getType('Thematic');
+      }
       return info.schema.getType('AssemblPost');
     },
   },

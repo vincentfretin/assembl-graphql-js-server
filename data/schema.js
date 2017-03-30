@@ -3,159 +3,125 @@ import { makeExecutableSchema } from 'graphql-tools';
 import resolvers from './resolvers';
 
 const schema = `
-type SentimentCounts {
-  like: Int
-  disagree: Int
-  dont_understand: Int
-  more_info: Int
+schema {
+  query: Query
+  mutation: Mutations
 }
 
-type AgentProfile {
+type AgentProfile implements Node {
   id: ID!
   name: String
 }
 
-#type User extends AgentProfile {
-#  email: String!
-#}
+type CreateThematic {
+  thematic: Thematic
+}
 
-type Video {
-  title(lang: String): String
-  description(lang: String): String
-  htmlCode: String
+scalar DateTime
+
+input LangStringEntryInput {
+  value: String!
+  localeCode: String!
+}
+
+type Mutations {
+  createThematic(video: VideoInput, identifier: String!, descriptionEntries: [LangStringEntryInput], questions: [QuestionInput], titleEntries: [LangStringEntryInput]!): CreateThematic
+}
+
+interface Node {
+  id: ID!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+type Post implements Node, PostInterface {
+  id: ID!
+  creationDate: DateTime!
+  creator: AgentProfile
+  subject(lang: String): String
+  body(lang: String): String
+  sentimentCounts: SentimentCounts
+}
+
+type PostConnection {
+  pageInfo: PageInfo!
+  edges: [PostEdge]!
+}
+
+type PostEdge {
+  node: PostUnion
+  cursor: String!
 }
 
 interface PostInterface {
-  id: ID!
-  creationDate: String #DateTime
+  creationDate: DateTime!
   creator: AgentProfile
   subject(lang: String): String
   body(lang: String): String
   sentimentCounts: SentimentCounts
-  replies: [Post]
 }
 
-type AssemblPost implements PostInterface {
+union PostUnion = PropositionPost | Post
+
+type PropositionPost implements Node, PostInterface {
   id: ID!
-  creationDate: String #DateTime
+  creationDate: DateTime!
   creator: AgentProfile
   subject(lang: String): String
   body(lang: String): String
   sentimentCounts: SentimentCounts
-  replies: [Post]
 }
 
-type Proposition implements PostInterface {
-  id: ID!
-  creationDate: String #DateTime
-  creator: AgentProfile
-  subject(lang: String): String  # not used for proposition, auto-filled with Re: question?
-  body(lang: String): String  #  not used by question
-  sentimentCounts: SentimentCounts
-  replies: [Post]
-}
-
-union Post = AssemblPost | Proposition
-
-interface IdeaInterface {
-  id: ID!
-  description: String
-  title(lang: String): String
-  numPosts: Int
-  posts: [Post]
-  ideas: [IdeaTypes]
-}
-
-type Idea implements IdeaInterface {
-  id: ID!
-  description: String
-  title(lang: String): String
-  numPosts: Int
-  imgUrl: String
-  posts: [Post]
-  ideas: [IdeaTypes]
-}
-
-type Thematic implements IdeaInterface {
-  id: ID!
-  identifier(identifier: String): String
-  description: String
-  imgUrl: String
-  title(lang: String): String
-  numPosts: Int  # sum of posts of all questions
-  numContributors: Int  # sum of contributors of all questions
-  posts: [Post]  # not used
-  ideas: [IdeaTypes]  # this is the questions
-  title(lang: String): String  # title field from idea table is not a langstring, this is why we add title field in thematic table which is a langstring
-  video: Video
-}
-
-type Question implements IdeaInterface {
-  id: ID!
-  description: String
-  title(lang: String): String
-  numPosts: Int
-  posts: [Post]
-  ideas: [IdeaTypes] # not used
-  title(lang: String): String
-}
-
-union IdeaTypes = Idea | Thematic | Question
-
-# the schema allows the following query:
 type Query {
-  posts(discussionId: ID, ideaId: ID, offset: Int, first: Int, after: String): [Post]
-  ideas(identifier: String!, discussionId: ID, ideaType: IdeaType, offset: Int, first: Int, after: String): [IdeaTypes]
-  idea(id: ID!): Thematic
+  node(id: ID!): Node
+  posts(before: String, after: String, first: Int, last: Int): PostConnection
+  thematics(identifier: String): [Thematic]
 }
 
-# Type of sentiment
-enum SentimentType {
-  LIKE
-  DISAGREE
-  DONT_UNDERSTAND
-  MORE_INFO
+type Question implements Node {
+  id: ID!
+  title(lang: String): String
+  posts(random: Boolean): [PropositionPost]
 }
 
-# Type of idea
-enum IdeaType {
-  IDEA
-  ROOT_IDEA
-  THEMATIC
-  QUESTION
+input QuestionInput {
+  titleEntries: [LangStringEntryInput]!
 }
 
-# Type of post
-enum PostType {
-  ASSEMBL_POST
-  PROPOSITION
+type SentimentCounts {
+  dontUnderstand: Int
+  disagree: Int
+  like: Int
+  moreInfo: Int
 }
 
-# this schema allows the following mutation:
-type Mutation {
-  addSentiment(
-    postId: Int!
-    type: SentimentType!
-  ): SentimentCounts!
-  createIdea(
-    discussionId: ID!
-    parentId: ID,
-    type: IdeaType!
-    title: String!
-  ): Idea!
-  createPost(
-    discussionId: ID!
-    ideaId: ID
-    parentId: ID,
-    type: PostType!,
-    subject: String,
-    body: String!
-  ): Post!
+type Thematic implements Node {
+  id: ID!
+  identifier: String
+  title(lang: String): String
+  description(lang: String): String
+  questions: [Question]
+  video(lang: String): Video
+  imgUrl: String
+  numPosts: Int
+  numContributors: Int
 }
 
-schema {
-  query: Query
-  mutation: Mutation
+type Video {
+  title: String
+  description: String
+  htmlCode: String
+}
+
+input VideoInput {
+  titleEntries: [LangStringEntryInput]
+  descriptionEntries: [LangStringEntryInput]
+  htmlCode: String
 }
 `;
 
