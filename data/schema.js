@@ -40,6 +40,7 @@ type Mutations {
   ): SentimentCounts!
   createPost(
     ideaId: ID
+    creatorId: ID,
     parentId: ID,
     subject: String,
     body: String!

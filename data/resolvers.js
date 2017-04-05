@@ -8,11 +8,96 @@ const authors = [
 ];
 
 const posts = [
-  {"id": "proposition:1", "creatorId": 542,
-  "ideaId": "question:3",
-   "body": "Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
-   "sentimentCounts": {"like": 45, "disagree": 123},
+  {
+    "id": "proposition:1",
+    "creatorId": 542,
+    "body": "1.1 Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
+    "sentimentCounts": {
+      "like": 132,
+      "disagree": 102
+    }
   },
+  {
+    "id": "proposition:2",
+    "creatorId": 693,
+    "body": "1.2 Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
+    "sentimentCounts": {
+      "like": 80,
+      "disagree": 20
+    }
+  },
+  {
+    "id": "proposition:3",
+    "creatorId": 139,
+    "body": "1.3 Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
+    "sentimentCounts": {
+      "like": 78,
+      "disagree": 135
+    }
+  },
+  {
+    "id": "proposition:4",
+    "creatorId": 542,
+    "body": "1.4 Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
+    "sentimentCounts": {
+      "like": 132,
+      "disagree": 102
+    }
+  },
+  {
+    "id": "proposition:5",
+    "creatorId": 693,
+    "body": "1.5 Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
+    "sentimentCounts": {
+      "like": 80,
+      "disagree": 20
+    }
+  },
+  {
+    "id": "proposition:6",
+    "creatorId": 139,
+    "body": "1.6 Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
+    "sentimentCounts": {
+      "like": 78,
+      "disagree": 135
+    }
+  },
+  {
+    "id": "proposition:7",
+    "creatorId": 542,
+    "body": "1.7 Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
+    "sentimentCounts": {
+      "like": 132,
+      "disagree": 102
+    }
+  },
+  {
+    "id": "proposition:8",
+    "creatorId": 693,
+    "body": "1.8 Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
+    "sentimentCounts": {
+      "like": 80,
+      "disagree": 20
+    }
+  },
+  {
+    "id": "proposition:9",
+    "creatorId": 139,
+    "body": "1.9 Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
+    "sentimentCounts": {
+      "like": 78,
+      "disagree": 135
+    }
+  },
+  {
+    "id": "proposition:10",
+    "creatorId": 139,
+    "body": "1.10 Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
+    "sentimentCounts": {
+      "like": 78,
+      "disagree": 135
+    }
+  }
 ];
 
 
@@ -94,7 +179,7 @@ const ideas = [
             }
           },
           {
-            "id": "proposition:1",
+            "id": "proposition:4",
             "creatorId": 542,
             "body": "1.4 Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
             "sentimentCounts": {
@@ -103,7 +188,7 @@ const ideas = [
             }
           },
           {
-            "id": "proposition:2",
+            "id": "proposition:5",
             "creatorId": 693,
             "body": "1.5 Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
             "sentimentCounts": {
@@ -112,7 +197,7 @@ const ideas = [
             }
           },
           {
-            "id": "proposition:3",
+            "id": "proposition:6",
             "creatorId": 139,
             "body": "1.6 Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
             "sentimentCounts": {
@@ -121,7 +206,7 @@ const ideas = [
             }
           },
           {
-            "id": "proposition:1",
+            "id": "proposition:7",
             "creatorId": 542,
             "body": "1.7 Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
             "sentimentCounts": {
@@ -130,7 +215,7 @@ const ideas = [
             }
           },
           {
-            "id": "proposition:2",
+            "id": "proposition:8",
             "creatorId": 693,
             "body": "1.8 Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
             "sentimentCounts": {
@@ -139,7 +224,7 @@ const ideas = [
             }
           },
           {
-            "id": "proposition:3",
+            "id": "proposition:9",
             "creatorId": 139,
             "body": "1.9 Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
             "sentimentCounts": {
@@ -148,7 +233,7 @@ const ideas = [
             }
           },
           {
-            "id": "proposition:3",
+            "id": "proposition:10",
             "creatorId": 139,
             "body": "1.10 Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
             "sentimentCounts": {
@@ -163,7 +248,7 @@ const ideas = [
         "title": "Selon vous, quelles opportunités l'Intelligence Artificielle pourrait représenter ?",
         "posts": [
           {
-            "id": "proposition:1", "creatorId": 52,
+            "id": "proposition:11", "creatorId": 52,
             "body": "2.1 Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
             "sentimentCounts": {
               "like": 78,
@@ -171,7 +256,7 @@ const ideas = [
             },
           },
           {
-            "id": "proposition:2",
+            "id": "proposition:12",
             "creatorId": 723,
             "body": "2.2 Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
             "sentimentCounts": {
@@ -180,7 +265,7 @@ const ideas = [
             },
           },
           {
-            "id": "proposition:3",
+            "id": "proposition:13",
             "creatorId": 139,
             "body": "2.3 Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
             "sentimentCounts": {
@@ -189,7 +274,7 @@ const ideas = [
             },
           },
           {
-            "id": "proposition:1",
+            "id": "proposition:14",
             "creatorId": 542,
             "body": "2.4 Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
             "sentimentCounts": {
@@ -198,7 +283,7 @@ const ideas = [
             }
           },
           {
-            "id": "proposition:2",
+            "id": "proposition:15",
             "creatorId": 693,
             "body": "2.5 Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
             "sentimentCounts": {
@@ -207,7 +292,7 @@ const ideas = [
             }
           },
           {
-            "id": "proposition:3",
+            "id": "proposition:16",
             "creatorId": 139,
             "body": "2.6 Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
             "sentimentCounts": {
@@ -216,7 +301,7 @@ const ideas = [
             }
           },
           {
-            "id": "proposition:1",
+            "id": "proposition:17",
             "creatorId": 542,
             "body": "2.7 Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
             "sentimentCounts": {
@@ -225,7 +310,7 @@ const ideas = [
             }
           },
           {
-            "id": "proposition:2",
+            "id": "proposition:18",
             "creatorId": 693,
             "body": "2.8 Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
             "sentimentCounts": {
@@ -234,7 +319,7 @@ const ideas = [
             }
           },
           {
-            "id": "proposition:3",
+            "id": "proposition:19",
             "creatorId": 139,
             "body": "2.9 Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
             "sentimentCounts": {
@@ -243,7 +328,7 @@ const ideas = [
             }
           },
           {
-            "id": "proposition:3",
+            "id": "proposition:20",
             "creatorId": 139,
             "body": "2.10 Transformer l'échelle des quartiers, en somme, pour se rapprocher du rythme des pas. Modifier les distances et aménager la hauteur des bâtiments. Reconcevoir des agencements urbains \"à hauteur d'homme\".",
             "sentimentCounts": {
@@ -314,6 +399,8 @@ const ideas = [
   }
 ];
 
+let idCount = 0;
+
 const resolveFunctions = {
   Query: {
     thematics(_, { identifier }) {
@@ -344,8 +431,19 @@ const resolveFunctions = {
       // pubsub.publish('postUpvoted', post);
       return post.sentimentCounts;
     },
-    createPost(_, { ideaId }) {
-      
+    createPost(_, { ideaId, creatorId, body }) {
+      const post = {};
+      idCount += 1;
+      post.id = "proposition:"+idCount;
+      post.ideaId = ideaId;
+      post.body = body;
+      post.creatorId = creatorId;
+      post.sentimentCounts = {
+        "like": 0,
+        "disagree": 0
+      }
+      console.log(post);
+      return post;
     }
   },
   // Subscription: {
