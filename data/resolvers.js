@@ -407,7 +407,7 @@ const resolveFunctions = {
       return ideas.filter(idea => idea.identifier === identifier);
     },
     node(_, { id }) {
-      return find(ideas, { id: id });
+      return find(ideas, { id: id }) || find(posts, { id: id }) || find(authors, { id: id });
     },
     // author(_, { id }) {
     //   return find(authors, { id: id });
@@ -456,7 +456,7 @@ const resolveFunctions = {
   //     return filter(posts, { authorId: author.id });
   //   },
   // },
-  PostInterface: {
+  PropositionPost: {
     creator(post) {
       return find(authors, { id: post.creatorId });
     },
